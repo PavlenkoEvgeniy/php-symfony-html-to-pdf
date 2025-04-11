@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-install pdo_mysql mysqli zip mbstring exif pcntl bcmath gd
 
 # Install wkhtmltopdf
-UN apt-get update && apt-get install -y wkhtmltopdf
+RUN apt-get update && apt-get install -y wkhtmltopdf
 
 # Create html directory
 RUN mkdir -p /application/var/html/
