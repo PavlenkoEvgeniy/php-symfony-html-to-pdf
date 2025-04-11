@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ absolute_url(asset('css/bootstrap.min.css')) }}">
+    <link rel="stylesheet" href="{{ absolute_url(asset('css/style.css')) }}">
+{% endblock %}
+
+{% block title %}Pdf generator{% endblock %}
+
+{% block body %}
+    <div class="certificate-container" id="certificate">
+        <div class="decoration top-left">🏆</div>
+        <div class="decoration top-right">⭐</div>
+        <div class="decoration bottom-left">⚽</div>
+        <div class="decoration bottom-right">🏅</div>
+
+        <div class="certificate-header">
+            <div class="certificate-title">ГРАМОТА</div>
+            <div class="certificate-subtitle">о награждении</div>
+        </div>
+
+        <div class="certificate-body">
+            <p class="certificate-text">Настоящая грамота вручается</p>
+            <div class="certificate-name" id="displayName">{{ name }}у</div>
+            <p class="certificate-text" id="displayAchievement">{{ achievement }}</p>
+        </div>
+
+        <div class="certificate-footer">
+            <div class="certificate-date">
+                <p>Дата: <span id="displayDate">{{ date }}</span></p>
+            </div>
+            <div class="certificate-signature">
+                <p>Директор спортивного клуба</p>
+                <div class="signature-line"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

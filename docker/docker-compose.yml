@@ -24,28 +24,7 @@ services:
             - ./sourcefiles/php-fpm/conf.d/messenger-worker.conf:/etc/supervisor/conf.d/messenger-worker.conf
         networks:
             - internal
-    
-    mysql:
-        image: mariadb:10.11
-        container_name: ${PROJECT_NAME}-mysql
-        restart: always
-        env_file:
-            - .env
-        environment:
-            MYSQL_DATABASE: ${DB_DATABASE}
-            MYSQL_USER: ${DB_USERNAME}
-            MYSQL_PASSWORD: ${DB_PASSWORD}
-            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-        volumes:
-            - "./../database/mysql-data:/var/lib/mysql"
-        ports:
-            - "${DB_PORT}:3306"
-        networks:
-            - internal
 
-volumes:
-    mysql-data:
-        driver: local
 networks:
     internal:
         driver: bridge

@@ -1,0 +1,14 @@
+knp_snappy:
+    pdf:
+        enabled: true
+        binary: /usr/bin/wkhtmltopdf
+        options:
+            enable-local-file-access: true
+            load-error-handling: ignore  # Ignore missing resources
+            no-stop-slow-scripts: true
+            page-width: 650px
+            page-height: 440px
+            margin-top: 0px
+            margin-bottom: 0px
+            margin-left: 0px
+            margin-right: 0px

@@ -35,13 +35,3 @@ RUN docker-php-ext-install pdo_mysql mysqli zip mbstring exif pcntl bcmath gd
 
 # Install wkhtmltopdf
 RUN apt-get update && apt-get install -y wkhtmltopdf
-
-# Create html directory
-RUN mkdir -p /application/var/html/
-RUN chmod -R 775 /application/var/html/
-RUN chown -R www-data:www-data /application/var/html/
-
-# Create pdf directory
-RUN mkdir -p /application/var/pdf/
-RUN chmod -R 775 /application/var/pdf/
-RUN chown -R www-data:www-data /application/var/pdf/

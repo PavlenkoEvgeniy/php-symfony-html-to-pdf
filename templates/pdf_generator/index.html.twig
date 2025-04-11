@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pdf generator{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <form action="{{ path('app_pdf_generator_generate') }}" method="post" class="edit-mode mb-4">
+                    <input type="hidden" name="_token" value="{{ csrf_token('generate') }}">
+                    <h3 class="text-center mb-4">Заполните данные грамоты</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">ФИО награждаемого</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Введите ФИО">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="date">Дата награждения</label>
+                                <input type="date" class="form-control" id="date" name="date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="achievement">Спортивное достижение</label>
+                        <input type="text" class="form-control" id="achievement" name="achievement"
+                               value="за высокие спортивные достижения и выдающиеся результаты">
+                    </div>
+                    <button class="btn btn-primary w-100" type="submit">Сгенерировать грамоту</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="certificate-container" id="certificate">
+        <div class="decoration top-left">🏆</div>
+        <div class="decoration top-right">⭐</div>
+        <div class="decoration bottom-left">⚽</div>
+        <div class="decoration bottom-right">🏅</div>
+
+        <div class="certificate-header">
+            <div class="certificate-title">ГРАМОТА</div>
+            <div class="certificate-subtitle">о награждении</div>
+        </div>
+
+        <div class="certificate-body">
+            <p class="certificate-text">Настоящая грамота вручается</p>
+            <div class="certificate-name" id="displayName">Иванову Ивану Ивановичу</div>
+            <p class="certificate-text" id="displayAchievement">за высокие спортивные достижения и выдающиеся
+                результаты</p>
+        </div>
+
+        <div class="certificate-footer">
+            <div class="certificate-date">
+                <p>Дата: <span id="displayDate">2025-04-11</span></p>
+            </div>
+            <div class="certificate-signature">
+                <p>Директор спортивного клуба</p>
+                <div class="signature-line"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
