@@ -20,7 +20,7 @@ A small web service for creating custom certificates and exporting them to PDF f
 
 1. **Clone the repository**:  
 ```bash
-https://github.com/PavlenkoEvgeniy/php-symfony-html-to-pdf.git
+git clone https://github.com/PavlenkoEvgeniy/php-symfony-html-to-pdf.git
 ```  
 
 2. **Install dependencies**:  
