@@ -20,7 +20,7 @@ A small web service for creating custom certificates and exporting them to PDF f
 
 1. **Clone the repository**:  
 ```bash
-git clone https://github.com/yourusername/certificate-generator.git
+https://github.com/PavlenkoEvgeniy/php-symfony-html-to-pdf.git
 ```  
 
 2. **Install dependencies**:  
